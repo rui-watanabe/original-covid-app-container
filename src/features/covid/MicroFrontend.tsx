@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as H from 'history';
+import axios from 'axios';
 
 type MicroFrontendType = {
   name: string;
@@ -31,18 +32,17 @@ const MicroFrontend: {
       return undefined;
     }
 
-    fetch(`${host}/asset-manifest.json`)
-      .then((res) => res.json())
-      .then((manifest) => {
-        const script = document.createElement('script');
-        script.id = scriptId;
-        script.crossOrigin = '';
-        script.src = `${host}${manifest.files['main.js']}`;
-        script.onload = () => {
-          renderMicroFrontend();
-        };
-        document.head.appendChild(script);
-      });
+    (async () => {
+      const { data } = await axios.get(`${host}/asset-manifest.json`);
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.crossOrigin = '';
+      script.src = `${host}${data.files['main.js']}`;
+      script.onload = () => {
+        renderMicroFrontend();
+      };
+      document.head.appendChild(script);
+    })();
 
     return () => {
       if (window[`unmount${name}`]) {

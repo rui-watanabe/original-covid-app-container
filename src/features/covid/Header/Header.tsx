@@ -1,47 +1,29 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-// import { useSelector, useDispatch } from 'react-redux';
-// import {
-//   fetchAsyncGetData,
-//   selectCurrentData,
-// } from '../covidSlice';
+import { AppBar } from '@material-ui/core';
+import HeaderContent from './HeaderContent';
 
-const useStyles = makeStyles(() => ({
-  title: {
-    flexGrow: 1,
-  },
-  content: { marginTop: 85 },
-}));
+type HeaderType = {
+  titleText: string;
+  dateText: string;
+  primaryColorFlg: boolean;
+};
 
-const Header: React.FC = () => {
-  const classes = useStyles();
-  // const dispatch = useDispatch();
-  // const currentDataList = useSelector(selectCurrentData);
-
-  // useEffect(() => {
-  //   dispatch(fetchAsyncGetData('positive-cases'));
-  //   dispatch(fetchAsyncGetLatestData('positive-cases'));
-  // }, [dispatch]);
-
+const Header = ({
+  titleText,
+  dateText,
+  primaryColorFlg,
+}: HeaderType): JSX.Element => {
   return (
     <>
-      <AppBar position="absolute" color="default">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            COVID LIVE DASHBOARD
-          </Typography>
-          <div>
-            <Typography variant="body1">
-              {
-                new Date().toLocaleDateString()
-                // currentDataList[currentDataList.length - 1].date
-              }
-              更新
-            </Typography>
-          </div>
-        </Toolbar>
-      </AppBar>
+      {primaryColorFlg ? (
+        <AppBar position="absolute" color="primary">
+          <HeaderContent titleText={titleText} dateText={dateText} />
+        </AppBar>
+      ) : (
+        <AppBar position="absolute" color="default">
+          <HeaderContent titleText={titleText} dateText={dateText} />
+        </AppBar>
+      )}
     </>
   );
 };
