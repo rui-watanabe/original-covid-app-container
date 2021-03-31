@@ -11,9 +11,9 @@ type MicroFrontendType = {
 declare global {
   interface Window {
     renderWorld: (containerId: string, history: H.History) => void;
-    unmountWorld: (containerId: string) => void;
+    // unmountWorld: (containerId: string) => void;
     renderJapan: (containerId: string, history: H.History) => void;
-    unmountJapan: (containerId: string) => void;
+    // unmountJapan: (containerId: string) => void;
     [key: string]: (containerId: string, history?: H.History) => void;
   }
 }
@@ -21,7 +21,7 @@ declare global {
 const MicroFrontend: {
   ({ name, host, history }: MicroFrontendType): JSX.Element;
 } = ({ name, host, history }: MicroFrontendType) => {
-  useEffect(() => {
+  useEffect((): void => {
     const scriptId = `micro-frontend-script-${name}`;
     const renderMicroFrontend = () => {
       window[`render${name}`](`${name}-container`, history);
@@ -29,26 +29,25 @@ const MicroFrontend: {
 
     if (document.getElementById(scriptId)) {
       renderMicroFrontend();
-      return undefined;
+    } else {
+      (async () => {
+        const { data } = await axios.get(`${host}/asset-manifest.json`);
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.crossOrigin = '';
+        script.src = `${host}${data.files['main.js']}`;
+        script.onload = () => {
+          renderMicroFrontend();
+        };
+        document.head.appendChild(script);
+      })();
     }
 
-    (async () => {
-      const { data } = await axios.get(`${host}/asset-manifest.json`);
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.crossOrigin = '';
-      script.src = `${host}${data.files['main.js']}`;
-      script.onload = () => {
-        renderMicroFrontend();
-      };
-      document.head.appendChild(script);
-    })();
-
-    return () => {
-      if (window[`unmount${name}`]) {
-        window[`unmount${name}`](`${name}-container`);
-      }
-    };
+    // return () => {
+    //   if (window[`unmount${name}`]) {
+    //     window[`unmount${name}`](`${name}-container`);
+    //   }
+    // };
   });
 
   return <main id={`${name}-container`} />;
