@@ -1,53 +1,12 @@
-// import React from 'react';
-// import Header from './features/covid/Header/Header';
-
-// const App: React.FC = () => {
-//   return (
-//     <>
-//       <Header />
-//     </>
-//   );
-// };
-
-// export default App;
-
 import React from 'react';
 import * as H from 'history';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './features/covid/Header/Header';
-import MicroFrontend from './features/covid/MicroFrontend';
+import NotFound from './features/covid/NotFound/NotFound';
+import Japan from './features/covid/Japan/Japan';
+import World from './features/covid/World/World';
 
-import './App.css';
-
-type HistoryType = {
+export type HistoryType = {
   history: H.History;
-};
-
-const Japan: ({ history }: HistoryType) => JSX.Element = ({ history }) => {
-  return (
-    <>
-      <Header />
-      <MicroFrontend
-        history={history}
-        host={process.env.REACT_APP_JAPAN_HOST}
-        name="Japan"
-      />
-    </>
-  );
-};
-
-const World: ({ history }: HistoryType) => JSX.Element = ({ history }) => {
-  return (
-    <>
-      <Header />
-      <MicroFrontend
-        history={history}
-        host={process.env.REACT_APP_WORLD_HOST}
-        name="World"
-      />
-      ;
-    </>
-  );
 };
 
 const App: React.FC = () => {
@@ -56,6 +15,7 @@ const App: React.FC = () => {
       <Switch>
         <Route exact path="/" component={Japan} />
         <Route exact path="/world" component={World} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,0 +1,8 @@
+.floatingButton {
+  margin: 0;
+  position: fixed;
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+}
