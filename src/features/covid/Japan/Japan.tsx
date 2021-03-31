@@ -14,6 +14,7 @@ const Japan = ({ history }: HistoryType): JSX.Element => {
       <FloatingButton
         titleText="TO COVID LIVE DASHBOARD WORLD"
         primaryColorFlg={false}
+        history={history}
       />
     </>
   );

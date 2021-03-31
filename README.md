@@ -1,44 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Name
+「COVID LIVE DASHBORD」
+海外と日本のコロナ感染状況をリアルタイムで取得し、データをグラフ化表示したWebアプリケーション。
 
-## Available Scripts
+# DEMO
+COVID LIVE DASHBOARD WORLD：
+![demo](https://gyazo.com/3c36f0e05aea71b18beadb21d461860a/raw)
+COVID LIVE DASHBOARD JAPAN：
+![demo](https://gyazo.com/3c36f0e05aea71b18beadb21d461860a/raw)
+COVID LIVE DASHBOARD WORLD：
+![demo](https://gyazo.com/3c36f0e05aea71b18beadb21d461860a/raw)
 
-In the project directory, you can run:
+# URL
+COVID LIVE DASHBOARD JAPAN：
+- https://original-covid-app-microfront.web.app/
 
-### `yarn start`
+COVID LIVE DASHBOARD WORLD：
+- https://original-covid-app-microfront.web.app/world
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+上記以外のパス：
+404ページ表示
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Architecture
+- Micro Frontends<br>
+Micro Frontendsの技術を使用
 
-### `yarn test`
+- React<br>
+フロントエンドにReactを使用しSPA化
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TypeScript<br>
+Reactの型定義のため使用
 
-### `yarn build`
+- Redux Toolkit<br>
+フロントエンドの状態管理のために使用
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Firebase<br>
+デプロイ先
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Material UI<br>
+デザインツールのライブラリー
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Chart.js<br>
+グラフ描画のライブラリー
 
-### `yarn eject`
+# Micro Frontends
+Micro Frontendsとは、各マイクロサービスが提供する画面の各コンポーネントを結合し、単独のアプリケーションのように動作させることできる技術。<br>
+<br>
+今回は既存プロダクトをマイクロフロントエンドで一つのアプリケーションで動作させるといったような事例を考慮し、コンテナ側とプロダクト側との依存が低い、Run-time integration via JavaScript の方式を採用。<br>
+<br>
+参考記事：<br>
+https://martinfowler.com/articles/micro-frontends.html
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Repository
+コンテナ側：<br>
+- https://github.com/rui-watanabe/original-covid-app-container
+<br>
+プロダクト側：<br>
+- https://github.com/rui-watanabe/original-covid-app-japan
+- https://github.com/rui-watanabe/original-covid-app-world
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Future
+- フロントエンド側のテストコード作成
+- コンテナ側と各プロダクト側のCI/CDパイプラインの作成
+- 各プロダクトでのデータの連携
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# License
+ [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Note
+COVID LIVE DASHBOARD JAPANについて、「Open Data API」のリファレンスに記載されていないがリクエスト数に上限があるため、503のエラーが出る可能性がある。
