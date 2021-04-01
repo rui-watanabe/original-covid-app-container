@@ -11,7 +11,12 @@ const World = ({ history }: HistoryType): JSX.Element => {
         host={process.env.REACT_APP_WORLD_HOST}
         name="World"
       />
-      <FloatingButton titleText="COVID LIVE DASHBOARD JAPAN" primaryColorFlg />;
+      <FloatingButton
+        history={history}
+        titleText="COVID LIVE DASHBOARD JAPAN"
+        primaryColorFlg
+      />
+      ;
     </>
   );
 };

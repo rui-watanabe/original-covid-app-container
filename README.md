@@ -1,44 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Name
+「COVID LIVE DASHBORD」
+海外と日本のコロナ感染状況をリアルタイムで取得し、データをグラフ化表示したWebアプリケーション。
 
-## Available Scripts
+# DEMO
+ページ遷移：
+![demo](https://gyazo.com/ace7d094e6cca7e12f589244352ce4a8/raw)
+COVID LIVE DASHBOARD WORLD：
+![demo](https://gyazo.com/b4bd6558a56093624f4bda41dc6fef0b/raw)
+COVID LIVE DASHBOARD JAPAN：
+![demo](https://gyazo.com/da4357bdd74b25cc360f51f5cae06cb4/raw)
 
-In the project directory, you can run:
+# URL
+https://original-covid-app-microfront.web.app/
 
-### `yarn start`
+# Architecture
+- Micro Frontends<br>
+Micro Frontendsの技術を使用
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React<br>
+フロントエンドにReactを使用しSPA化
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- TypeScript<br>
+Reactの型定義のため使用
 
-### `yarn test`
+- Redux Toolkit<br>
+フロントエンドの状態管理のために使用
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Firebase<br>
+デプロイ先
 
-### `yarn build`
+- Material UI<br>
+デザインツールのライブラリー
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Chart.js<br>
+グラフ描画のライブラリー
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Micro Frontends
+Micro Frontendsとは、各マイクロサービスが提供する画面の各コンポーネントを結合し、単独のアプリケーションのように動作させることできる技術。<br>
+<br>
+今回は既存プロダクトをマイクロフロントエンドで一つのアプリケーションで動作させるといったような事例を考慮し、コンテナ側とプロダクト側との依存が低い、Run-time integration via JavaScript の方式を採用。<br>
+<br>
+参考記事：<br>
+https://martinfowler.com/articles/micro-frontends.html
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Repository
+コンテナ側：<br>
+- https://github.com/rui-watanabe/original-covid-app-container
 
-### `yarn eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+プロダクト側：<br>
+- https://github.com/rui-watanabe/original-covid-app-japan
+- https://github.com/rui-watanabe/original-covid-app-world
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Future
+- フロントエンド側のテストコード作成
+- コンテナ側と各プロダクト側のCI/CDパイプラインの作成
+- 各プロダクトでのデータの連携
+- 直接パス指定時にページが見つからないバグの解決
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# License
+ [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Note
+COVID LIVE DASHBOARD JAPANについて、「Open Data API」のリファレンスに記載されていないがリクエスト数に上限があるため、503のエラーが出る可能性がある。

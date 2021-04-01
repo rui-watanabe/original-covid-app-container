@@ -17,14 +17,14 @@ const NotFound = ({ history }: HistoryType): JSX.Element => {
         <h1>404 - Not Found!</h1>
         <Button
           variant="contained"
-          onClick={() => history.push('/')}
+          onClick={() => history.push('/japan')}
           className={classes.button}
         >
           TO COVID LIVE DASHBOARD JAPAN
         </Button>
         <Button
           variant="contained"
-          onClick={() => history.push('/world')}
+          onClick={() => history.push('/')}
           color="primary"
           className={classes.button}
         >
