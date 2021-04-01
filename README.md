@@ -3,22 +3,15 @@
 海外と日本のコロナ感染状況をリアルタイムで取得し、データをグラフ化表示したWebアプリケーション。
 
 # DEMO
+ページ遷移：
+![demo](https://gyazo.com/ace7d094e6cca7e12f589244352ce4a8/raw)
 COVID LIVE DASHBOARD WORLD：
-![demo](https://gyazo.com/3c36f0e05aea71b18beadb21d461860a/raw)
+![demo](https://gyazo.com/b4bd6558a56093624f4bda41dc6fef0b/raw)
 COVID LIVE DASHBOARD JAPAN：
-![demo](https://gyazo.com/3c36f0e05aea71b18beadb21d461860a/raw)
-COVID LIVE DASHBOARD WORLD：
-![demo](https://gyazo.com/3c36f0e05aea71b18beadb21d461860a/raw)
+![demo](https://gyazo.com/da4357bdd74b25cc360f51f5cae06cb4/raw)
 
 # URL
-COVID LIVE DASHBOARD JAPAN：
-- https://original-covid-app-microfront.web.app/
-
-COVID LIVE DASHBOARD WORLD：
-- https://original-covid-app-microfront.web.app/world
-
-上記以外のパス：
-404ページ表示
+https://original-covid-app-microfront.web.app/
 
 # Architecture
 - Micro Frontends<br>
@@ -53,7 +46,9 @@ https://martinfowler.com/articles/micro-frontends.html
 # Repository
 コンテナ側：<br>
 - https://github.com/rui-watanabe/original-covid-app-container
+
 <br>
+
 プロダクト側：<br>
 - https://github.com/rui-watanabe/original-covid-app-japan
 - https://github.com/rui-watanabe/original-covid-app-world
@@ -62,6 +57,7 @@ https://martinfowler.com/articles/micro-frontends.html
 - フロントエンド側のテストコード作成
 - コンテナ側と各プロダクト側のCI/CDパイプラインの作成
 - 各プロダクトでのデータの連携
+- 直接パス指定時にページが見つからないバグの解決
 
 # License
  [MIT license](https://en.wikipedia.org/wiki/MIT_License).

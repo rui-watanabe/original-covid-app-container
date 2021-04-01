@@ -40,6 +40,15 @@ const MicroFrontend: {
           renderMicroFrontend();
         };
         document.head.appendChild(script);
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.crossOrigin = '';
+        link.type = 'text/css';
+        link.href = `${host}${data.files['main.css']}`;
+        link.onload = () => {
+          renderMicroFrontend();
+        };
+        document.head.appendChild(link);
       })();
     }
 
