@@ -19,21 +19,31 @@ const FloatingButton = ({
       {primaryColorFlg ? (
         <Fab
           variant="extended"
-          color="default"
-          onClick={() => history.push('/japan')}
-        >
-          <NavigationIcon />
-          {titleText}
-        </Fab>
-      ) : (
-        <Fab
-          variant="extended"
           color="primary"
           onClick={() => history.push('/')}
         >
           <NavigationIcon />
           {titleText}
         </Fab>
+      ) : (
+        <>
+          <Fab
+            variant="extended"
+            color="secondary"
+            onClick={() => history.push('/prefecture')}
+          >
+            <NavigationIcon />
+            {titleText}
+          </Fab>
+          {/* <Fab
+            variant="extended"
+            color="default"
+            onClick={() => history.push('/japan')}
+          >
+            <NavigationIcon />
+            {titleText}
+          </Fab> */}
+        </>
       )}
     </div>
   );

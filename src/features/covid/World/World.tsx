@@ -13,8 +13,8 @@ const World = ({ history }: HistoryType): JSX.Element => {
       />
       <FloatingButton
         history={history}
-        titleText="COVID LIVE DASHBOARD JAPAN"
-        primaryColorFlg
+        titleText="全国医療提供体制状況へ"
+        primaryColorFlg={false}
       />
       ;
     </>
