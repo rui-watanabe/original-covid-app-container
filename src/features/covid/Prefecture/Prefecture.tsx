@@ -1,18 +1,15 @@
-// import React from 'react';
-
-// const Japan: React.FC = () => <></>;
 import React from 'react';
 import { HistoryType } from '../../../App';
 import FloatingButton from '../Button/FloatingButton';
 import MicroFrontend from '../MicroFrontend';
 
-const Japan = ({ history }: HistoryType): JSX.Element => {
+const Prefecture = ({ history }: HistoryType): JSX.Element => {
   return (
     <>
       <MicroFrontend
         history={history}
-        host={process.env.REACT_APP_JAPAN_HOST}
-        name="Japan"
+        host={process.env.REACT_APP_PREFECTURE_HOST}
+        name="Prefecture"
       />
       <FloatingButton
         titleText="TO COVID LIVE DASHBOARD WORLD"
@@ -23,4 +20,4 @@ const Japan = ({ history }: HistoryType): JSX.Element => {
   );
 };
 
-export default Japan;
+export default Prefecture;
