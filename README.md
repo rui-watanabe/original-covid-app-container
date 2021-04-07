@@ -4,11 +4,11 @@
 
 # DEMO
 ページ遷移：
-![demo](https://gyazo.com/ace7d094e6cca7e12f589244352ce4a8/raw)
+![demo](https://gyazo.com/eee886d5965c15cc8a23e9797573dde4/raw)
 COVID LIVE DASHBOARD WORLD：
-![demo](https://gyazo.com/b4bd6558a56093624f4bda41dc6fef0b/raw)
-COVID LIVE DASHBOARD JAPAN：
-![demo](https://gyazo.com/da4357bdd74b25cc360f51f5cae06cb4/raw)
+![demo](https://gyazo.com/458364e74545eb9c3ecd9bba500b9ea8/raw)
+全国医療提供体制状況：
+![demo](https://gyazo.com/563c0e392a0f571e0c6df9952fd7458c/raw)
 
 # URL
 https://original-covid-app-microfront.web.app/
@@ -50,17 +50,14 @@ https://martinfowler.com/articles/micro-frontends.html
 <br>
 
 プロダクト側：<br>
-- https://github.com/rui-watanabe/original-covid-app-japan
 - https://github.com/rui-watanabe/original-covid-app-world
+- https://github.com/rui-watanabe/original-covid-app-japan-prefecture
 
 # Future
 - フロントエンド側のテストコード作成
 - コンテナ側と各プロダクト側のCI/CDパイプラインの作成
 - 各プロダクトでのデータの連携
-- 直接パス指定時にページが見つからないバグの解決
+- 直接パス指定時とページ更新時にページが見つからないエラーの解決
 
 # License
  [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
-# Note
-COVID LIVE DASHBOARD JAPANについて、「Open Data API」のリファレンスに記載されていないがリクエスト数に上限があるため、503のエラーが出る可能性がある。
