@@ -13,6 +13,24 @@ COVID LIVE DASHBOARD WORLD：
 # URL
 https://original-covid-app-microfront.web.app/
 
+# Structure
+- Container<br>
+Prefecture ComponentとWorld Componentを読み込み表示する
+
+- Prefecture Component, World Component<br>
+各ComponentのJavaScriptとCSSをWebpackでモジュールバンドルし、Container側で読み込めるようにする
+
+- Proxy<br>
+External covid Japan prefecture APIから取得したAPI情報の成形と、CORSの許可設定を行なう
+
+- External covid Japan prefecture API<br>
+全国医療提供体制状況の外部API 
+
+- External covid World API<br>
+世界のコロナ感染状況の外部API 
+<br>
+![demo](https://gyazo.com/c747970713a193679dab9bc67986ebfe/raw)
+
 # Architecture
 - Micro Frontends<br>
 Micro Frontendsの技術を使用
