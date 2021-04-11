@@ -29,6 +29,7 @@ External covid Japan prefecture APIから取得したAPI情報の成形と、COR
 - External covid World API<br>
 世界のコロナ感染状況の外部API 
 <br>
+
 ![demo](https://gyazo.com/c747970713a193679dab9bc67986ebfe/raw)
 
 # Architecture
@@ -52,6 +53,9 @@ Reactの型定義のため使用
 
 - Chart.js<br>
 グラフ描画のライブラリー
+
+- Node.js(Express)<br>
+Prefecture Componentのバックエンドで使用
 
 # Micro Frontends
 Micro Frontendsとは、各マイクロサービスが提供する画面の各コンポーネントを結合し、単独のアプリケーションのように動作させることできる技術。<br>
