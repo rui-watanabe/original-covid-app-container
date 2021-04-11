@@ -76,6 +76,11 @@ https://martinfowler.com/articles/micro-frontends.html
 - https://github.com/rui-watanabe/original-covid-app-world
 - https://github.com/rui-watanabe/original-covid-app-japan-prefecture
 
+<br>
+
+バックエンド側：<br>
+- https://github.com/rui-watanabe/original-covid-app-japan-prefecture-proxy
+
 # Future
 - フロントエンド側のテストコード作成
 - コンテナ側と各プロダクト側のCI/CDパイプラインの作成
