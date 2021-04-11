@@ -15,7 +15,8 @@ https://original-covid-app-microfront.web.app/
 
 # Structure
 - Container<br>
-Prefecture ComponentとWorld Componentを読み込み表示する
+Prefecture ComponentとWorld Componentを読み込み表示する<br>
+Container側で表示を行なっているのは遷移ボタンのみで、他の表示は各コンポーネントから読み込んでいる
 
 - Prefecture Component, World Component<br>
 各ComponentのJavaScriptとCSSをWebpackでモジュールバンドルし、Container側で読み込めるようにする
