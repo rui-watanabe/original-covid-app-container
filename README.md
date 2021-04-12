@@ -58,6 +58,9 @@ Reactの型定義のため使用
 - Node.js(Express)<br>
 Prefecture Componentのバックエンドで使用
 
+- Nginx<br>
+バックエンドサーバーはさくらのクラウドのCentOS7でNginxをたてている
+
 # Micro Frontends
 Micro Frontendsとは、各マイクロサービスが提供する画面の各コンポーネントを結合し、単独のアプリケーションのように動作させることできる技術。<br>
 <br>
