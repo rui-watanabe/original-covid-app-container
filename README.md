@@ -88,7 +88,6 @@ https://martinfowler.com/articles/micro-frontends.html
 - フロントエンド側のテストコード作成
 - コンテナ側と各プロダクト側のCI/CDパイプラインの作成
 - 各プロダクトでのデータの連携
-- 直接パス指定時とページ更新時にページが見つからないエラーの解決
 
 # License
  [MIT license](https://en.wikipedia.org/wiki/MIT_License).
