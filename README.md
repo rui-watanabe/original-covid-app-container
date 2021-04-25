@@ -88,6 +88,7 @@ https://martinfowler.com/articles/micro-frontends.html
 - フロントエンド側のテストコード作成
 - コンテナ側と各プロダクト側のCI/CDパイプラインの作成
 - 各プロダクトでのデータの連携
+- ナビゲーションバーの表示をコンテナ側で行う
 
 # License
  [MIT license](https://en.wikipedia.org/wiki/MIT_License).
